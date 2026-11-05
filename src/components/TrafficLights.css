@@ -1,0 +1,51 @@
+.traffic-widget {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.traffic-lights {
+  display: inline-flex;
+  gap: 12px;
+  padding: 16px;
+  background: #1f2937;
+  border-radius: 16px;
+}
+
+.traffic-lights--vertical {
+  flex-direction: column;
+}
+
+.traffic-lights--horizontal {
+  flex-direction: row;
+}
+
+.light {
+  width: 64px;
+  height: 64px;
+  padding: 0;
+  border-radius: 50%;
+  border: 3px solid #000;
+  background: var(--lamp);
+  opacity: 0.3;
+  cursor: pointer;
+  transition: opacity 0.2s, box-shadow 0.2s;
+}
+
+.light--active {
+  opacity: 1;
+  box-shadow: 0 0 24px var(--lamp);
+}
+
+.light--red {
+  --lamp: #ef4444;
+}
+
+.light--yellow {
+  --lamp: #facc15;
+}
+
+.light--green {
+  --lamp: #22c55e;
+}

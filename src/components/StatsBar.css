@@ -1,0 +1,31 @@
+.stats-bar {
+  min-width: 240px;
+  padding: 16px;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  text-align: left;
+}
+
+.stats-bar__list {
+  margin: 0 0 12px;
+  padding-left: 20px;
+}
+
+.stats-bar p {
+  margin: 4px 0;
+}
+
+.stats-bar__toggle {
+  margin-top: 12px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #1f2937;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.stats-bar__toggle:hover {
+  background: #374151;
+}
