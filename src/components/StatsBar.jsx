@@ -5,10 +5,14 @@ function StatsBar({
   totalClicks,
   currentSignal,
   orientation,
+  isAutomatic,
   onToggleOrientation,
+  onStart,
+  onStop,
 }) {
   const orientationLabel =
     orientation === 'vertical' ? 'Вертикальна орієнтація' : 'Горизонтальна орієнтація';
+  const modeLabel = isAutomatic ? 'Автоматичний' : 'Ручний';
 
   return (
     <div className="stats-bar">
@@ -24,11 +28,32 @@ function StatsBar({
       <p>
         Активний сигнал: <strong>{currentSignal}</strong>
       </p>
+      <p>
+        Режим: <strong>{modeLabel}</strong>
+      </p>
       <p>{orientationLabel}</p>
 
-      <button type="button" className="stats-bar__toggle" onClick={onToggleOrientation}>
-        Перемкнути орієнтацію
-      </button>
+      <div className="stats-bar__buttons">
+        <button
+          type="button"
+          className="stats-bar__btn"
+          onClick={onStart}
+          disabled={isAutomatic}
+        >
+          Запустити
+        </button>
+        <button
+          type="button"
+          className="stats-bar__btn"
+          onClick={onStop}
+          disabled={!isAutomatic}
+        >
+          Зупинити
+        </button>
+        <button type="button" className="stats-bar__btn" onClick={onToggleOrientation}>
+          Перемкнути орієнтацію
+        </button>
+      </div>
     </div>
   );
 }

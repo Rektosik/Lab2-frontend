@@ -16,8 +16,14 @@
   margin: 4px 0;
 }
 
-.stats-bar__toggle {
+.stats-bar__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
   margin-top: 12px;
+}
+
+.stats-bar__btn {
   padding: 8px 16px;
   border: none;
   border-radius: 8px;
@@ -26,6 +32,11 @@
   cursor: pointer;
 }
 
-.stats-bar__toggle:hover {
+.stats-bar__btn:hover:not(:disabled) {
   background: #374151;
+}
+
+.stats-bar__btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
 }
